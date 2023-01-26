@@ -1,0 +1,27 @@
+{
+"advertisements": {
+  "product_1": {
+    "image": {
+      "path": "../image.png",
+      "url": "server.com/image.png"
+    },
+    "title": "sdfsdfsd",
+    "description": "....",
+    "target_url": "new-product.com/awesome"
+    },
+  "product_2": "...",
+  "product_3": "..."
+},
+"presentations": {
+  "my_list": {
+    "template": "list_template.html",
+    "images": {
+      "width": 200,
+      "height": 300
+    },
+    "advertisements": ["product_1", "product_3"]
+  },
+  "card_xyz": "..."
+}
+
+}
