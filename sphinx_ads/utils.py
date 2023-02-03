@@ -13,7 +13,7 @@ logger = get_logger(__name__)
 
 
 def get_json_data_from_path(app: Sphinx) -> Dict:
-    ads_json_path = app.config.config.ads_path
+    ads_json_path = app.config.config.advertisement_path
     logger.info(f"Importing ads from {ads_json_path}")
 
     if not os.path.isabs(ads_json_path):
@@ -25,15 +25,15 @@ def get_json_data_from_path(app: Sphinx) -> Dict:
 
         if not os.path.exists(correct_ads_json_path):
             # Determine relative path by starting from conf.py directory
-            check_ads_json_path = os.path.join(app.srcdir, ads_json_path)
+            check_ads_json_path = os.path.join(app.confdir, ads_json_path)
             if os.path.exists(check_ads_json_path):
                 correct_ads_json_path = check_ads_json_path
     else:
         # Absolute path starts with /, based on the source directory. The / must be striped
-        correct_ads_json_path = os.path.join(app.srcdir, ads_json_path[1:])
+        correct_ads_json_path = os.path.join(app.confdir, ads_json_path[1:])
 
     if not os.path.exists(correct_ads_json_path):
-        raise ReferenceError(f"The path you passed to 'ads_path': {correct_ads_json_path}, does not exist.")
+        raise ReferenceError(f"The path you passed to 'advertisement_path': {correct_ads_json_path}, does not exist.")
 
     with open(correct_ads_json_path) as ads_json_file:
         ads_json_file_content = ads_json_file.read()
@@ -41,14 +41,14 @@ def get_json_data_from_path(app: Sphinx) -> Dict:
         ads_list: Dict = json.loads(ads_json_file_content)
     except json.JSONDecodeError as e:
         raise AdsJSONImportException(
-            f"Could not load the JSON file you passed to 'ads_path': {correct_ads_json_path}. Reason: {e}"
+            f"Could not load the JSON file you passed to 'advertisement_path': {correct_ads_json_path}. Reason: {e}"
         )
 
     return ads_list
 
 
 def get_json_data_from_url(app: Sphinx) -> Dict:
-    ads_json_url = app.config.ads_url
+    ads_json_url = app.config.advertisement_url
     # check if given url is downloadable ads.json path
     url = urlparse(ads_json_url)
     if not url.scheme and url.netloc:

@@ -1,25 +1,29 @@
 {
 "advertisements": {
-  "product_1": {
-    "image": {
-      "path": "../image.png",
-      "url": "server.com/image.png"
-    },
-    "title": "sdfsdfsd",
-    "description": "....",
-    "target_url": "new-product.com/awesome"
-    },
-  "product_2": "...",
-  "product_3": "..."
+  "sphinx_needs": {
+    "title": "Sphinx Needs",
+    "description": "Sphinx-Needs is an extension for the Python based documentation framework Sphinx, which you can simply extend by different extensions to fulfill nearly any requirement of a software development team.",
+    "target_url": "https://sphinx-needs.readthedocs.io"
+  },
+  "sphinx_needs_ent": {
+    "title": "Sphinx Needs Enterprise",
+    "description": "Sphinx-Needs Enterprise package provides enterprise specific solutions for Sphinx-Needs.",
+    "target_url": "https://useblocks.com/sphinx-needs-enterprise/"
+  },
+  "sphinx_test_reports": {
+    "title": "Sphinx Test Reports",
+    "description": "Sphinx-Test-Reports shows test results inside Sphinx documentations.",
+    "target_url": "https://sphinx-test-reports.readthedocs.io"
+  }
 },
 "presentations": {
-  "my_list": {
-    "template": "list_template.html",
+  "default": {
+    "template": "sphinx_ads_default.html",
     "images": {
       "width": 200,
       "height": 300
     },
-    "advertisements": ["product_1", "product_3"]
+    "advertisements": ["sphinx_needs", "sphinx_needs_ent"]
   },
   "card_xyz": "..."
 }

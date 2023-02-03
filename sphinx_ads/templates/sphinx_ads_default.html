@@ -1,0 +1,23 @@
+{% if ads %}
+<div id="sphinx_ads" style="display: none" data-sphinx-ads-selector="{{ layout.selector }}">
+    {% set ads_to_show = layout.advertisements %}
+    {% set ads_to_show_len = ads_to_show | length %}
+    {% if ads_to_show_len >= 0 %}
+        {% for ad_key, ad_value in ads %}
+            {% if ad_key in ads_to_show %}
+                <a href="{{ ad_value.target_url }}" title="{{ ad_value.title }}" id="ads_link_{{ loop.index }}">
+                    <b style="margin-bottom: 3px;">{{ ad_value.title }}</b>
+                    <p>{{ ad_value.description | truncate(20) }}</p>
+                </a>
+            {% endif %}
+        {% endfor %}
+    {% else %}
+    {% for ad_key, ad_value in ads %}
+        <a href="{{ ad_value.target_url }}" title="{{ ad_value.title }}" id="ads_link_{{ loop.index }}">
+            <b style="margin-bottom: 3px;">{{ ad_value.title }}</b>
+            <p>{{ ad_value.description | truncate(20) }}</p>
+        </a>
+        {% endfor %}
+    {% endif %}
+</div>
+{% endif %}

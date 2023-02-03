@@ -15,8 +15,8 @@ def setup(app: Sphinx) -> Dict[str, Any]:
     log = get_logger(__name__)
     log.debug("Starting setup of Sphinx-Ads")
 
-    app.add_config_value("ads_path", None, "html", types=[str])
-    app.add_config_value("ads_url", None, "html", types=[str])
+    app.add_config_value("advertisement_path", None, "html", types=[str])
+    app.add_config_value("advertisement_url", None, "html", types=[str])
 
     ########################################################################
     # DIRECTIVES
@@ -40,18 +40,25 @@ def prepare_env(app: Sphinx, env: BuildEnvironment) -> None:
         # Used to store the Ads json data, so it can be easily accessible anywhere in the extension package.
         env.sphinx_ads_data = {}
 
-    if app.config.ads_path is not None and len(app.config.ads_path) != 0:
-        ads_json_data = get_json_data_from_path(app)
+    if app.config.advertisement_path is not None and len(app.config.advertisement_path) != 0:
+        ads_json_data: Dict = get_json_data_from_path(app)
         env.sphinx_ads_data.update(ads_json_data)
 
-    if app.config.ads_url is not None and len(app.config.ads_url) != 0:
-        ads_json_data = get_json_data_from_url(app)
+    if app.config.advertisement_url is not None and len(app.config.advertisement_url) != 0:
+        ads_json_data: Dict = get_json_data_from_url(app)
         env.sphinx_ads_data.update(ads_json_data)
 
-    if not app.config.ads_path and not app.config.ads_url:
+    if (not app.config.advertisement_path and not app.config.advertisement_url) or (
+        app.config.advertisement_path and app.config.advertisement_url
+    ):
         raise AdsConfigException(
             "Please provide a path or url to retrieve the JSON data from "
-            "using either the 'ads_path' or 'ads_url' variable."
+            "using either the 'advertisement_path' or 'advertisement_url' variable."
+        )
+
+    if app.config.advertisement_path and app.config.advertisement_url:
+        raise AdsConfigException(
+            "Please provide only one of these variables: 'advertisement_path' or 'advertisement_url' variable."
         )
 
 
