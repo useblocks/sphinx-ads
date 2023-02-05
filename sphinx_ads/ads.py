@@ -88,13 +88,7 @@ def check_configuration(app: Sphinx, config: Config) -> None:
         config["advertisement_path"] and config["advertisement_url"]
     ):
         raise AdsConfigException(
-            "Please provide a path or url to retrieve the JSON data from "
-            "using either the 'advertisement_path' or 'advertisement_url' variable."
-        )
-
-    if config["advertisement_path"] and config["advertisement_url"]:
-        raise AdsConfigException(
-            "Please provide only one of these variables: 'advertisement_path' or 'advertisement_url' variable."
+            "You must provide one of these variables: 'advertisement_path' or 'advertisement_url', in conf.py."
         )
 
 

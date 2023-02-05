@@ -60,9 +60,9 @@ def get_json_data_from_url(app: Sphinx) -> Dict:
     # check if given url is downloadable ads.json path
     url = urlparse(ads_json_url)
     if not url.scheme and url.netloc:
-        raise AdsJSONImportException(f"The JSON URL given is not downloadable: {url}.")
+        raise AdsJSONImportException(f"The JSON URL given is not downloadable: {ads_json_url}.")
     # download ads.json
-    logger.info(f"Downloading ads.json from url {ads_json_url}")
+    logger.info(f"Downloading ads.json from url: {ads_json_url}")
     s = requests.Session()
     s.mount("file://", FileAdapter())
     try:

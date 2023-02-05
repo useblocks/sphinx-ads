@@ -26,3 +26,4 @@ html_static_path = ["_static"]
 pygments_style = "perldoc"
 
 advertisement_path = "./ads.json"
+# advertisement_url = "https://raw.githubusercontent.com/useblocks/sphinx-advertising/main/docs/ads.json"
