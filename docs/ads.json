@@ -19,13 +19,11 @@
 "presentations": {
   "default": {
     "template": "sphinx_ads_default.html",
-    "images": {
-      "width": 200,
-      "height": 300
-    },
     "advertisements": ["sphinx_needs", "sphinx_needs_ent"]
   },
-  "card_xyz": "..."
+  "all": {
+    "template": "sphinx_ads_default.html"
+  }
 }
 
 }
