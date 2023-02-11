@@ -1,23 +1,20 @@
 {% if ads %}
-<div id="sphinx_ads">
-    {% set ads_to_show = layout.advertisements %}
-    {% set ads_to_show_len = ads_to_show | length %}
-    {% if ads_to_show %}
-        {% for ad_key, ad_value in ads %}
-            {% if ad_key in ads_to_show %}
-                <a href="{{ ad_value.target_url }}" title="{{ ad_value.title }}" id="ads_link_{{ loop.index }}">
-                    <b style="margin-bottom: 3px;">{{ ad_value.title }}</b>
-                    <p>{{ ad_value.description | truncate(80) }}</p>
-                </a>
-            {% endif %}
-        {% endfor %}
-    {% else %}
-        {% for ad_key, ad_value in ads %}
-            <a href="{{ ad_value.target_url }}" title="{{ ad_value.title }}" id="ads_link_{{ loop.index }}">
-                <b style="margin-bottom: 3px;">{{ ad_value.title }}</b>
-                <p>{{ ad_value.description | truncate(20) }}</p>
+{% set ads_to_show = layout.advertisements %}
+{% if ads_to_show %}
+    {% for ad_key, ad_value in ads %}
+        {% if ad_key in ads_to_show and ad_value is mapping %}
+            <a href="{{ ad_value.get('target_url') }}" title="{{ ad_value.get('title') }}" id="ads_link_{{ loop.index }}">
+                <b style="margin-bottom: 3px;">{{ ad_value.get('title') }}</b>
+                <p>{{ ad_value.get('description') | truncate(60) }}</p>
             </a>
-        {% endfor %}
-    {% endif %}
-</div>
+        {% endif %}
+    {% endfor %}
+{% else %}
+    {% for ad_key, ad_value in ads %}
+        <a href="{{ ad_value.get('target_url') }}" title="{{ ad_value.get('title') }}" id="ads_link_{{ loop.index }}">
+            <b style="margin-bottom: 3px;">{{ ad_value.get('title') }}</b>
+            <p>{{ ad_value.get('description') | truncate(60) }}</p>
+        </a>
+    {% endfor %}
+{% endif %}
 {% endif %}

@@ -11,7 +11,7 @@ readme = "README.rst"
 repository = "https://github.com/useblocks/sphinx-advertising"
 documentation = ""
 classifiers=[
-        'Development Status :: Under development',
+        'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
@@ -21,8 +21,8 @@ classifiers=[
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: 3.10',
-        'Topic :: Documentation',
-        'Topic :: Utilities',
+        'Topic :: Documentation :: Sphinx',
+        'Topic :: Software Development :: Build Tools',
         'Framework :: Sphinx :: Extension',
     ]
 
