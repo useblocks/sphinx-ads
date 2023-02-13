@@ -19,9 +19,10 @@
 "presentations": {
   "default": {
     "template": "sphinx_ads_default.html",
-    "advertisements": ["sphinx_needs", "sphinx_needs_ent"]
+    "advertisements": ["sphinx_needs", "sphinx_needs_ent"],
+    "selector": ".md-nav--primary"
   },
-  "all": {
+  "carousel": {
     "template": "sphinx_ads_default.html"
   }
 }

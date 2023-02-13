@@ -48,7 +48,7 @@ class Template:
             jinja_html_string = jinja_template.render(ads=ads.items(), layout=layout_data)
 
         html_string: str = (
-            f"<div id='sphinx_ads' style='display: none' "
+            f"<div id='sphinx_ads' style='display:none;margin-top:5px;padding:0 2px' "
             f"data-sphinx-ads-selector='{layout_data.get('selector', 'div.sphinxsidebar')}'>"
             f"{jinja_html_string}"
             '<div style="text-align:right;margin-bottom:10px;font-size:10pt;color:#787878;">'

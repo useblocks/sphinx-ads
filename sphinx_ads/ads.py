@@ -27,8 +27,8 @@ def setup(app: Sphinx) -> Dict[str, Any]:
     # CONFIG_VALUES
     ######################################################################
     # Define config values
-    app.add_config_value("advertisement_path", None, "html", types=[str])
-    app.add_config_value("advertisement_url", None, "html", types=[str])
+    app.add_config_value("ads_path", None, "html", types=[str])
+    app.add_config_value("ads_url", None, "html", types=[str])
 
     ########################################################################
     # DIRECTIVES
@@ -84,11 +84,11 @@ def html_page_context(
 #         # Used to store the Ads json data, so it can be easily accessible anywhere in the extension package.
 #         env.sphinx_ads_data = {}
 #
-#     if app.config.advertisement_path is not None and len(app.config.advertisement_path) != 0:
+#     if app.config.ads_path is not None and len(app.config.ads_path) != 0:
 #         ads_json_data: Dict = get_json_data_from_path(app)
 #         env.sphinx_ads_data.update(ads_json_data)
 #
-#     if app.config.advertisement_url is not None and len(app.config.advertisement_url) != 0:
+#     if app.config.ads_url is not None and len(app.config.ads_url) != 0:
 #         ads_json_data: Dict = get_json_data_from_url(app)
 #         env.sphinx_ads_data.update(ads_json_data)
 #
@@ -98,11 +98,11 @@ def check_configuration(app: Sphinx, config: Config) -> None:
     """
     Checks the configuration options.
     """
-    if (not config["advertisement_path"] and not config["advertisement_url"]) or (
-        config["advertisement_path"] and config["advertisement_url"]
+    if (not config["ads_path"] and not config["ads_url"]) or (
+        config["ads_path"] and config["ads_url"]
     ):
         raise AdsConfigException(
-            "You must provide one of these variables: 'advertisement_path' or 'advertisement_url', in conf.py."
+            "You must provide one of these variables: 'ads_path' or 'ads_url', in conf.py."
         )
 
 

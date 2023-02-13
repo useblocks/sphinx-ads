@@ -3,18 +3,26 @@
 {% if ads_to_show %}
     {% for ad_key, ad_value in ads %}
         {% if ad_key in ads_to_show and ad_value is mapping %}
-            <a href="{{ ad_value.get('target_url') }}" title="{{ ad_value.get('title') }}" id="ads_link_{{ loop.index }}">
-                <b style="margin-bottom: 3px;">{{ ad_value.get('title') }}</b>
-                <p>{{ ad_value.get('description') | truncate(60) }}</p>
-            </a>
+            <div id="ads_link_{{ loop.index }}" class="sphinx-ads-item sa_is_hidden">
+                <a href="{{ ad_value.get('target_url') }}" title="{{ ad_value.get('title') }}">
+                    <div class="sphinx-ads-img"><img src="_static/img/download.svg" width="150" height="150"></div>
+                    <b style="margin-bottom: 3px;">{{ ad_value.get('title') }}</b>
+                    <p>{{ ad_value.get('description') | truncate(60) }}</p>
+                </a>
+            </div>
         {% endif %}
     {% endfor %}
 {% else %}
     {% for ad_key, ad_value in ads %}
-        <a href="{{ ad_value.get('target_url') }}" title="{{ ad_value.get('title') }}" id="ads_link_{{ loop.index }}">
-            <b style="margin-bottom: 3px;">{{ ad_value.get('title') }}</b>
-            <p>{{ ad_value.get('description') | truncate(60) }}</p>
-        </a>
+        {% if ad_value is mapping %}
+            <div id="ads_link_{{ loop.index }}" class="sphinx-ads-item sa_is_hidden">
+                <a href="{{ ad_value.get('target_url') }}" title="{{ ad_value.get('title') }}">
+                    <div class="sphinx-ads-img"><img src="_static/img/download.svg" width="150" height="150"></div>
+                    <b style="margin-bottom: 3px;">{{ ad_value.get('title') }}</b>
+                    <p>{{ ad_value.get('description') | truncate(60) }}</p>
+                </a>
+            </div>
+        {% endif %}
     {% endfor %}
 {% endif %}
 {% endif %}

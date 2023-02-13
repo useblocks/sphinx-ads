@@ -13,7 +13,7 @@ logger = get_logger(__name__)
 
 
 def get_json_data_from_path(app: Sphinx) -> Dict[str, Dict[str, Any]]:
-    ads_json_path: Path = Path(app.config.advertisement_path)
+    ads_json_path: Path = Path(app.config.ads_path)
     logger.info(f"Importing ads from {ads_json_path}")
 
     conf_dir = Path(app.confdir)
@@ -30,7 +30,7 @@ def get_json_data_from_path(app: Sphinx) -> Dict[str, Dict[str, Any]]:
         check_ads_json_path = conf_dir.joinpath(ads_json_path)
         if not check_ads_json_path.exists():
             raise ReferenceError(
-                f"The path you passed to 'advertisement_path': {app.config.advertisement_path}, does not exist."
+                f"The path you passed to 'ads_path': {app.config.ads_path}, does not exist."
             )
         correct_ads_json_path: Path = check_ads_json_path
     else:
@@ -39,7 +39,7 @@ def get_json_data_from_path(app: Sphinx) -> Dict[str, Dict[str, Any]]:
 
     if not correct_ads_json_path.exists():
         raise ReferenceError(
-            f"The path you passed to 'advertisement_path': {app.config.advertisement_path}, does not exist."
+            f"The path you passed to 'ads_path': {app.config.ads_path}, does not exist."
         )
 
     ads_json_file_content = correct_ads_json_path.read_text(encoding="utf8")
@@ -49,14 +49,14 @@ def get_json_data_from_path(app: Sphinx) -> Dict[str, Dict[str, Any]]:
         ads_list: Dict[str, Dict[str, Any]] = json.loads(ads_json_file_content)
     except json.JSONDecodeError as e:
         raise AdsJSONImportException(
-            f"Could not load the JSON file you passed to 'advertisement_path': {correct_ads_json_path}. Reason: {e}"
+            f"Could not load the JSON file you passed to 'ads_path': {correct_ads_json_path}. Reason: {e}"
         )
 
     return ads_list
 
 
 def get_json_data_from_url(app: Sphinx) -> Dict[str, Dict[str, Any]]:
-    ads_json_url = app.config.advertisement_url
+    ads_json_url = app.config.ads_url
     # check if given url is downloadable ads.json path
     url = urlparse(ads_json_url)
     if not url.scheme and url.netloc:
@@ -77,11 +77,11 @@ def get_json_data_from_url(app: Sphinx) -> Dict[str, Dict[str, Any]]:
 
 
 def load_data(app: Sphinx) -> None:
-    if app.config.advertisement_path is not None and len(app.config.advertisement_path) != 0:
+    if app.config.ads_path is not None and len(app.config.ads_path) != 0:
         ads_json_data: Dict[str, Dict[str, Any]] = get_json_data_from_path(app)
         app.env.sphinx_ads_data.update(ads_json_data)
 
-    if app.config.advertisement_url is not None and len(app.config.advertisement_url) != 0:
+    if app.config.ads_url is not None and len(app.config.ads_url) != 0:
         ads_json_data: Dict[str, Dict[str, Any]] = get_json_data_from_url(app)
         app.env.sphinx_ads_data.update(ads_json_data)
 
