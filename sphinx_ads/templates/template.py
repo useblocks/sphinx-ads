@@ -7,6 +7,7 @@ from sphinx.application import Sphinx
 from sphinx.errors import SphinxError
 
 from sphinx_ads.logging import get_logger
+from sphinx_ads.templates.layout import sphinx_ads_layouts
 
 logger = get_logger(__name__)
 
@@ -30,7 +31,7 @@ class Template:
 
         return template_paths
 
-    def advertisement(self, layout: str = "default") -> str:
+    def advertisement(self, layout: str = "sphinx-ads-default") -> str:
         if len(layout) == 0:
             raise AdsTemplateException(
                 "You must provide the name of a layout under the 'presentations' in your ads JSON file."
@@ -38,10 +39,8 @@ class Template:
         json_data: Dict[str, Dict[str, Any]] = self._sphinx_app.env.sphinx_ads_data
         ads = json_data.get("advertisements")
         presentations: Dict[str, Union[str, Dict]] = json_data.get("presentations", {})
-        layout_data = presentations.get(layout, {})
-        template_name = "sphinx_ads_default.html"
-        if presentations is not None and layout in presentations:
-            template_name: str = layout_data.get("template", "sphinx_ads_default.html")
+        layout_data = presentations.get(layout) or sphinx_ads_layouts.get(layout, {})
+        template_name = layout_data.get("template", "sphinx_ads_default.html")
         jinja_template = self.get_ads_template(template_name)
         jinja_html_string = ""
         if ads is not None:

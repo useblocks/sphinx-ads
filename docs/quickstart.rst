@@ -52,3 +52,10 @@ To setup a Sphinx project, you need to do the following:
         :alt: index.html file
 
 So what did the above steps do?
+
+1. First, we installed the ``sphinx`` extension and created a Sphinx project.
+2. We then created the JSON file, **ads.json**, that will contain the advertisement data based on the recommended :ref:`JSON data format <json-file>`.
+3. Next, we configured our Sphinx project to use the ``sphinx_ads`` based on the recommended :ref:`configuration <config>`.
+4. We then created the Jinja template file, **layout.html**, which calls the ``advertisement()`` function
+   in a Jinja block. The function returns the advertisement HTML content we want to display in the user's web browser.
+5. Finally, we build the Sphinx project and check the output in our web browser.

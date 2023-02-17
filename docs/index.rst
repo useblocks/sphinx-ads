@@ -23,4 +23,5 @@ This section of the documentation explains the different parts of the extension 
    Quickstart <quickstart>
    Configuration <configuration>
    JSON Data <json-file>
+   Changelog <changelog>
 
