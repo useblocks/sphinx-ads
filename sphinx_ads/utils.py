@@ -23,28 +23,22 @@ def get_json_data_from_path(app: Sphinx) -> Dict[str, Dict[str, Any]]:
         # curr_dir = os.path.dirname(app.env.docname)
         # new_ads_json_path = os.path.join(app.srcdir, curr_dir, ads_json_path)
         #
-        correct_ads_json_path: Path = Path("")
+        # correct_ads_json_path: Path = Path("")
 
         # if not os.path.exists(ads_json_path):
         # Determine relative path by starting from conf.py directory
         check_ads_json_path = conf_dir.joinpath(ads_json_path)
         if not check_ads_json_path.exists():
-            raise ReferenceError(
-                f"The path you passed to 'ads_path': {app.config.ads_path}, does not exist."
-            )
+            raise ReferenceError(f"The path you passed to 'ads_path': {app.config.ads_path}, does not exist.")
         correct_ads_json_path: Path = check_ads_json_path
     else:
         # Absolute path starts with /, based on the source directory. The / must be striped
         correct_ads_json_path: Path = conf_dir.joinpath(str(ads_json_path)[1:])
 
     if not correct_ads_json_path.exists():
-        raise ReferenceError(
-            f"The path you passed to 'ads_path': {app.config.ads_path}, does not exist."
-        )
+        raise ReferenceError(f"The path you passed to 'ads_path': {app.config.ads_path}, does not exist.")
 
     ads_json_file_content = correct_ads_json_path.read_text(encoding="utf8")
-    # with open(correct_ads_json_path) as ads_json_file:
-    #     ads_json_file_content = ads_json_file.read()
     try:
         ads_list: Dict[str, Dict[str, Any]] = json.loads(ads_json_file_content)
     except json.JSONDecodeError as e:

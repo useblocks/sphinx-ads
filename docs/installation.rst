@@ -78,13 +78,5 @@ Within the activated environment, use the following command to install Sphinx-Ad
            $ cd sphinx-ads
            $ pip install .
 
-Activation
-----------
 
-To activate the extension, please add `sphinx_ads` to the project's extension list in your **conf.py** file.
-
-.. code-block:: python
-
-   extensions = ["sphinx_ads",]
-
-For the full configuration, please read :ref:`config`.
+You can refer to the :ref:`Quickstart <quickstart>` section for a good introduction to Sphinx-Ads.

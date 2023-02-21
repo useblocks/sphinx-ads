@@ -98,12 +98,8 @@ def check_configuration(app: Sphinx, config: Config) -> None:
     """
     Checks the configuration options.
     """
-    if (not config["ads_path"] and not config["ads_url"]) or (
-        config["ads_path"] and config["ads_url"]
-    ):
-        raise AdsConfigException(
-            "You must provide one of these variables: 'ads_path' or 'ads_url', in conf.py."
-        )
+    if (not config["ads_path"] and not config["ads_url"]) or (config["ads_path"] and config["ads_url"]):
+        raise AdsConfigException("You must provide one of these variables: 'ads_path' or 'ads_url', in conf.py.")
 
 
 def add_static_files(app: Sphinx, env: BuildEnvironment):

@@ -5,6 +5,11 @@ Configuration
 
 All configurations take place in your project's **conf.py** file.
 
+.. note::
+
+    The defaults for the extension currently supports only the *alabaster* theme.
+    You must provide explicit support for your Sphinx theme of choice.
+
 Activation
 ----------
 
@@ -13,6 +18,23 @@ Add **sphinx_ads** to the extensions list.
 .. code-block:: python
 
    extensions = ["sphinx_ads",]
+
+Create a **layout.html** file in the **_templates/** folder under your **docs/** folder. The HTML file should contain the following data:
+
+.. code-block:: jinja
+
+    {% extends "!layout.html" %}
+    {% block footer %}
+    {{ super() }}
+    {{ advertisement('layout') }}
+    {% endblock %}
+
+.. _advertisement_func:
+
+advertisement()
++++++++++++++++
+
+.. autofunction:: sphinx_ads.templates.Template.advertisement
 
 Options
 -------
@@ -48,7 +70,7 @@ Default: **None**
 
 The above options are the only options you need to set in your **conf.py** file.
 
-.. note::
+.. warning::
 
    You cannot set the values for both `ads_path`_ and `ads_url`_ in the **conf.py** file.
    The extension only needs one of the options set in your **conf.py** file.

@@ -1,6 +1,6 @@
 # import os
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Union
+from typing import Any, Dict, List, Union
 
 import jinja2
 from sphinx.application import Sphinx
@@ -32,15 +32,21 @@ class Template:
         return template_paths
 
     def advertisement(self, layout: str = "sphinx-ads-default") -> str:
+        """
+        Function to generate the advertisement HTML content you want to display in your web browser.
+
+        :param layout: Name of the layout you want to use when presenting the advertisement content. Default layout is ``sphinx-ads-default``. The value must correspond to one of the layouts in your ads JSON file or the default layout is used. # noqa: E501
+        :return: The advertisement HTML content
+        """
         if len(layout) == 0:
             raise AdsTemplateException(
                 "You must provide the name of a layout under the 'presentations' in your ads JSON file."
             )
         json_data: Dict[str, Dict[str, Any]] = self._sphinx_app.env.sphinx_ads_data
         ads = json_data.get("advertisements")
-        presentations: Dict[str, Union[str, Dict]] = json_data.get("presentations", {})
-        layout_data = presentations.get(layout) or sphinx_ads_layouts.get(layout, {})
-        template_name = layout_data.get("template", "sphinx_ads_default.html")
+        presentations: Dict[str, Union[str, Dict]] = json_data.get("presentations")
+        layout_data: Dict = presentations.get(layout) or sphinx_ads_layouts.get(layout, {})
+        template_name: str = layout_data.get("template", "sphinx_ads_default.html")
         jinja_template = self.get_ads_template(template_name)
         jinja_html_string = ""
         if ads is not None:
@@ -48,6 +54,7 @@ class Template:
 
         html_string: str = (
             f"<div id='sphinx_ads' style='display:none;margin-top:5px;padding:0 2px' "
+            f"data-sphinx-ads-docs-html_theme='{self._sphinx_app.config.html_theme}' "
             f"data-sphinx-ads-selector='{layout_data.get('selector', 'div.sphinxsidebar')}'>"
             f"{jinja_html_string}"
             '<div style="text-align:right;margin-bottom:10px;font-size:10pt;color:#787878;">'

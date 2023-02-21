@@ -15,8 +15,9 @@ release = "0.0.1"
 
 extensions = [
     "sphinx_ads",
+    "sphinx.ext.autodoc",
     "sphinx_design",
-    "sphinx_copybutton"
+    "sphinx_copybutton",
     # "sphinx_immaterial"
 ]
 
