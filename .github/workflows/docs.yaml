@@ -27,9 +27,11 @@ jobs:
         with:
           python-version: '3.9'
       - name: Install Sphinx-Ads
-        run: pip install -e .
+        run: | 
+          pip install -U pip
+          pip install -e .
       - name: Install doc deps
-        run: pip install -r docs/docs-requirements.txt
+        run: pip install -r docs/doc-requirements.txt
       - name: Debugging information
         run: |
           echo "github.ref:" ${{github.ref}}
