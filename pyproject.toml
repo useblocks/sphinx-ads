@@ -9,7 +9,7 @@ authors = ["team useblocks <info@useblocks.com>"]
 license = "MIT"
 readme = "README.rst"
 repository = "https://github.com/useblocks/sphinx-advertising"
-documentation = ""
+documentation = "https://sphinx-ads.useblocks.com/"
 classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',

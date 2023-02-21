@@ -63,5 +63,5 @@ So what did the above steps do?
 3. Next, we configured our Sphinx project to use the ``sphinx_ads`` based on the recommended :ref:`configuration <config>`.
 4. We then created the Jinja template file, **layout.html**, which calls the ``advertisement()`` function
    in a Jinja block. The function returns the advertisement HTML content we want to display in the user's web browser.
-   Refer to the configuration page for more information about the :ref:` advertisement() <advertisement_func>` function.
+   Refer to the configuration page for more information about the :ref:`advertisement() <advertisement_func>` function.
 5. Finally, we build the Sphinx project and check the output in our web browser.
