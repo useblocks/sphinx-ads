@@ -35,7 +35,9 @@ class Template:
         """
         Function to generate the advertisement HTML content you want to display in your web browser.
 
-        :param layout: Name of the layout you want to use when presenting the advertisement content. Default layout is ``sphinx-ads-default``. The value must correspond to one of the layouts in your ads JSON file or the default layout is used. # noqa: E501
+        :param layout: Name of the layout you want to use when presenting the advertisement content.
+                        Default layout is ``sphinx-ads-default``. The value must correspond to one of the layouts in
+                        your ads JSON file or the default layout is used.
         :return: The advertisement HTML content
         """
         if len(layout) == 0:
