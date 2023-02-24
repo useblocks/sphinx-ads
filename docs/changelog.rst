@@ -13,7 +13,8 @@ License
 
 Released: under development
 
-* **21.02.2023** Added the following changes for the preparation of an official first release:
+* **24.02.2023** - Bugfix: Fixed bug in Sphinx-Ads JavaScript code to run only when the HTML document has loaded
+* **21.02.2023** - Added the following changes for the preparation of an official first release:
     * Added the GitHub Action workflows to handle documentation build, extension release, and pull requests checks
     * Updated the documentation
     * Minor changes to extension code

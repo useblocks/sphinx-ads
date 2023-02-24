@@ -8,7 +8,7 @@ description = "Sphinx extension for advertising between different Sphinx-Project
 authors = ["team useblocks <info@useblocks.com>"]
 license = "MIT"
 readme = "README.rst"
-repository = "https://github.com/useblocks/sphinx-advertising"
+repository = "https://github.com/useblocks/sphinx-ads"
 documentation = "https://sphinx-ads.useblocks.com/"
 classifiers=[
         'Development Status :: 2 - Pre-Alpha',

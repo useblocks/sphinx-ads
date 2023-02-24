@@ -64,7 +64,7 @@ The ``ads_url`` option allows you to set the URL of the JSON file that contains 
 .. note::
 
    The URL must return a JSON response containing the advertisement data.
-   Example: ``ads_url = 'https://raw.githubusercontent.com/useblocks/sphinx-advertising/main/docs/ads.json'``
+   Example: ``ads_url = 'https://raw.githubusercontent.com/useblocks/sphinx-ads/main/docs/ads.json'``
 
 Default: **None**
 

@@ -61,7 +61,7 @@ class Template:
             f"{jinja_html_string}"
             '<div style="text-align:right;margin-bottom:10px;font-size:10pt;color:#787878;">'
             "<i> With 💛 by&nbsp;<a "
-            'href="https://github.com/useblocks/sphinx-advertising">Sphinx-Ads</a></i></div>'
+            'href="https://sphinx-ads.useblocks.com/">Sphinx-Ads</a></i></div>'
             f"</div>"
         )
 

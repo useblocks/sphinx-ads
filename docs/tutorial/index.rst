@@ -1,6 +1,6 @@
 .. Tutorial about using and customising Sphinx-Ads
 
-Tutorial
-========
+Tutorials
+=========
 
 **Content to be added soon.**

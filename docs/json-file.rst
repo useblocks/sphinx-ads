@@ -1,7 +1,7 @@
 .. _json-file:
 
-JSON Representation of Ads Data
-===============================
+Ads JSON File
+=============
 
 **Content to be added soon.**
 

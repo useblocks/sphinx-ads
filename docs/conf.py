@@ -17,8 +17,8 @@ extensions = [
     "sphinx_ads",
     "sphinx.ext.autodoc",
     "sphinx_design",
-    "sphinx_copybutton",
-    # "sphinx_immaterial"
+    # "sphinx_immaterial",
+    "sphinx_copybutton"
 ]
 
 templates_path = ["_templates"]
@@ -26,11 +26,14 @@ exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
 # -- Options for HTML output
 
+html_favicon = "_static/img/favicon.ico"
+html_logo = "_static/img/sphinx-ads-logo.png"
 html_theme = "alabaster"
 # html_theme = "sphinx_immaterial"
+html_title = "Sphinx-Ads Docs"
 html_static_path = ["_static"]
 
 pygments_style = "perldoc"
 
 ads_path = "./ads.json"
-# ads_url = "https://raw.githubusercontent.com/useblocks/sphinx-advertising/main/docs/ads.json"
+# ads_url = "https://raw.githubusercontent.com/useblocks/sphinx-ads/main/docs/ads.json"

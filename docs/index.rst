@@ -22,6 +22,6 @@ This section of the documentation explains the different parts of the extension 
    Installation <installation>
    Quickstart <quickstart>
    Configuration <configuration>
-   JSON Data <json-file>
+   Ads JSON File <json-file>
    Tutorials <tutorial/index>
    Changelog <changelog>
