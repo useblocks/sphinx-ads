@@ -25,3 +25,4 @@ This section of the documentation explains the different parts of the extension 
    Ads JSON File <json-file>
    Tutorials <tutorial/index>
    Changelog <changelog>
+   Support <support>
