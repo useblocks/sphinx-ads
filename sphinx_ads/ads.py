@@ -120,7 +120,7 @@ def add_static_files(app: Sphinx, env: BuildEnvironment):
 
         # link CSS and JS files to HTML document
         app.add_css_file("sphinx_ads/sphinx_ads.css", rel="stylesheet")
-        app.add_js_file("sphinx_ads/sphinx_ads.js", loading_method="async")
+        app.add_js_file("sphinx_ads/sphinx_ads.js")
 
 
 class AdsConfigException(SphinxError):

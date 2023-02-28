@@ -1,4 +1,4 @@
-SRC_FILES = sphinx_ads/
+SRC_FILES = sphinx_ads/ tests/
 
 .PHONY: list
 list:
@@ -7,6 +7,10 @@ list:
 .PHONY: lint
 lint:
 	pre-commit run --all-files
+
+.PHONY: test
+test:
+	poetry run pytest -n auto --tb=long tests/
 
 .PHONY: docs-html
 docs-html:

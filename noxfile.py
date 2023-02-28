@@ -30,7 +30,7 @@ def run_tests(session, sphinx, docutils):
     session.run("pip", "install", "-r", "docs/doc-requirements.txt", silent=True)
     session.run("pip", "install", f"sphinx=={sphinx}", silent=True)
     session.run("pip", "install", f"docutils=={docutils}", silent=True)
-    session.run("echo", "TEST FINAL PACKAGE LIST")
+    session.run("echo", "TEST FINAL PACKAGE LIST", external=True)
     session.run("pip", "freeze")
     session.run("make", "test", external=True)
 
