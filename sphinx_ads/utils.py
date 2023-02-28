@@ -7,6 +7,7 @@ import requests
 from requests_file import FileAdapter
 from sphinx.application import Sphinx
 
+from sphinx_ads.json_validate import check_json_data
 from sphinx_ads.logging import get_logger
 
 logger = get_logger(__name__)
@@ -46,6 +47,13 @@ def get_json_data_from_path(app: Sphinx) -> Dict[str, Dict[str, Any]]:
             f"Could not load the JSON file you passed to 'ads_path': {correct_ads_json_path}. Reason: {e}"
         )
 
+    errors = check_json_data(ads_list)
+    # We only care for schema errors here
+    if errors.schema:
+        logger.info(f"Schema validation errors detected in Ad JSON file '{app.config.ads_path}':")
+        for error in errors.schema:
+            logger.info(f'* {error.message} -> {".".join(error.path)}')
+        raise AdsJSONSchemaError("Schema validation errors in Ads JSON data.")
     return ads_list
 
 
@@ -67,6 +75,13 @@ def get_json_data_from_url(app: Sphinx) -> Dict[str, Dict[str, Any]]:
     except Exception as e:
         raise AdsJSONImportException(f"Getting {ads_json_url} didn't work. Reason: {e}.")
 
+    errors = check_json_data(ads_list)
+    # We only care for schema errors here
+    if errors.schema:
+        logger.info(f"Schema validation errors detected in Ad JSON data from url '{app.config.ads_url}':")
+        for error in errors.schema:
+            logger.info(f'- {error.message} -> {".".join(error.path)}')
+        raise AdsJSONSchemaError("Schema validation errors in Ads JSON data.")
     return ads_list
 
 
@@ -81,4 +96,8 @@ def load_data(app: Sphinx) -> None:
 
 
 class AdsJSONImportException(BaseException):
+    pass
+
+
+class AdsJSONSchemaError(BaseException):
     pass

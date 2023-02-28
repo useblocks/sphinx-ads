@@ -23,7 +23,8 @@
     "selector": ".md-nav--primary"
   },
   "carousel": {
-    "template": "sphinx_ads_default.html"
+    "template": "sphinx_ads_default.html",
+    "selector": "div.sphinxsidebar"
   }
 }
 

@@ -104,3 +104,9 @@ def test_build_html(test_app):
         "With 💛 by&nbsp;<a "
         'href="http://sphinx-ads.useblocks.com/">Sphinx-Ads</a></i></div></div>\n' in html
     )
+
+
+# TODO: Test to check if JSON file imported exist
+# TODO: Test to check if URL response was JSON
+# TODO: Test to check if JSON file imported exist
+# TODO: Test to check the console output for hints about json schema validation errors
