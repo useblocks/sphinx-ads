@@ -38,6 +38,11 @@ To setup a Sphinx project, you need to do the following:
         extensions = ["sphinx_ads",]
 
         ads_path = "ads.json"   # path to the JSON file containing the ad data.
+        ads_url = "https://example.org/ads.json    # url link to the JSON data
+
+    .. note::
+
+        You cannot set the values for either :ref:`ads_path` or :ref:`ads_url` and not both in your **conf.py** file.
 6. Create a **layout.html** file in the **_templates/** folder under your **docs/** folder. The HTML file should contain the following data:
     .. code-block:: jinja
 
