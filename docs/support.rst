@@ -8,16 +8,15 @@ https://github.com/useblocks/sphinx-ads
 
 We are happy for each new entry and support wherever we can.
 
-Professional Support
---------------------
-If you need professional support you should get in contact with our company `useblocks <http://useblocks.com>`_.
+.. Professional Support --------------------
 
-We are a bunch of passionated developers, who normally work on process, tool or embedded related projects for automotive
-companies around the world.
+.. If you need professional support you should get in contact with our company `useblocks <http://useblocks.com>`_.
 
-Fastest way of reaching us is via e-mail: mail@useblocks.com.
+.. We are a bunch of passionated developers, who normally work on process, tool or embedded related projects for automotive companies around the world.
 
-.. image:: _static/img/useblocks_logo.png
+.. Fastest way of reaching us is via e-mail: mail@useblocks.com.
+
+.. .image:: _static/img/useblocks_logo.png
    :align: center
    :width: 100px
    :target: http://useblocks.com

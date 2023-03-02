@@ -70,7 +70,6 @@ Default: **None**
 
 The above options are the only options you need to set in your **conf.py** file.
 
-.. warning::
+.. note::
 
-   You cannot set the values for both `ads_path`_ and `ads_url`_ in the **conf.py** file.
-   The extension only needs one of the options set in your **conf.py** file.
+   You can set the values for either `ads_path`_ or `ads_url`_ and not both in your **conf.py** file.

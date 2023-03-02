@@ -1,8 +1,8 @@
 import json
-from typing import Any, List, Dict
+from pathlib import Path
+from typing import Any, Dict, List
 
 from jsonschema import Draft7Validator
-from pathlib import Path
 
 
 class Errors:

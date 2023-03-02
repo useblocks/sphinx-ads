@@ -13,6 +13,7 @@ License
 
 Released: under development
 
+* **01.03.2023** - Added documentation about the JSON data
 * **28.02.2023** - Added JSON schema validation support
 * **27.02.2023** - Added both Python and JavaScript testcases for the extension and added the JavaScript test CI action
 * **24.02.2023** - Bugfix: Fixed bug in Sphinx-Ads JavaScript code to run only when the HTML document has loaded
