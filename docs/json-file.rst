@@ -52,7 +52,7 @@ advertisements
 
 The ``advertisements`` object contains the list of ads you want to include in your project.
 
-In the ``advertisements`` object you can have multiple objects which represents different ad items. Each ad item must have a unique ad ID. Below is an example of ad items in the ``advertisements`` object:
+In the ``advertisements`` object you can have multiple objects which represent different ad items. Each ad item must have a unique ad ID. Below is an example of ad items in the ``advertisements`` object:
 
 .. code-block:: JSON
 
@@ -65,7 +65,7 @@ In the ``advertisements`` object you can have multiple objects which represents 
             },
             "sphinx-needs": {
                 "title": "Sphinx Needs",
-                "description": "Sphinx-Needs is an extension for the Python based documentation framework Sphinx, which you can simply extend by different extensions to fulfill nearly any requirement of a software development team."
+                "description": "Sphinx-Needs is an extension for the Python-based documentation framework Sphinx, which you can simply extend by different extensions to fulfill nearly any requirement of a software development team."
                 "target_url": "https://sphinx-needs.readthedocs.io"
             }
         }
@@ -84,7 +84,7 @@ presentations
 
 The ``presentations`` object contains the list of user-defined layouts you would like to include in your project for displaying the ads.
 
-In the ``presentations`` object you can have multiple objects which represents different layouts. Each layout must have a unique layout name. Below is an example of layouts in the ``presentations`` object:
+In the ``presentations`` object you can have multiple objects which represent different layouts. Each layout must have a unique layout name. Below is an example of layouts in the ``presentations`` object:
 
 .. code-block:: JSON
 
@@ -104,9 +104,9 @@ In the ``presentations`` object you can have multiple objects which represents d
 
 Each ad item must consist of the following:
 
-* template (**required**) - a JSON ``str`` containing the filename of a Jinja template file stored under the **_templates** folder in the Sphinx documentation directory.
+* template (**required**) - a JSON ``str`` containing the filename of a Jinja template file stored under the **_templates** folder in the Sphinx documentation directory. Refer to the :ref:`Templating <template>` page for more information.
 * advertisements (**optional**) - a JSON ``array`` containing ad IDs for the ads you want to display. E.g. ``['ad_item_1', 'ad_item_2']``.
-* selector (**required**) - a JSON ``str`` that contains a CSS selector to select the HTML element where the ad items will be shown. E.g. ``.md-nav-primary``.
+* selector (**required**) - a JSON ``str`` that contains a CSS selector to select where the ad items will be shown on the web page. E.g. ``.md-nav-primary``.
 
 .. note::
 
