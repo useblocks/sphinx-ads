@@ -9,7 +9,7 @@ We recommend using the latest version of Python. Sphinx-Ads supports Python 3.7 
 
 Virtual environments
 --------------------
-Use a virtual environment to manage the dependencies for your project, both in development and in production.
+Use a virtual environment to manage the dependencies for your project, both in development and production.
 
 Python comes bundled with the `venv <https://docs.python.org/3/library/venv.html#module-venv>`_
 module to create virtual environments.

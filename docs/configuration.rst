@@ -7,7 +7,7 @@ All configurations take place in your project's **conf.py** file.
 
 .. note::
 
-    The defaults for the extension currently supports only the *alabaster* theme.
+    The defaults for the extension currently support only the *alabaster* theme.
     You must provide explicit support for your Sphinx theme of choice.
 
 Activation
@@ -39,7 +39,7 @@ advertisement()
 Options
 -------
 
-All configuration options starts with the prefix ``ads_`` for **Sphinx-Ads**.
+All configuration options start with the prefix ``ads_`` for **Sphinx-Ads**.
 
 .. _ads_path:
 

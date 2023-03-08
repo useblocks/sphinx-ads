@@ -13,7 +13,7 @@ which you can use to add advertisements from a central source to your Sphinx doc
 User's Guide
 ------------
 
-The extension allows you to configure and add personalised ads from an open and free available json-file, which is maintained in one repo to your entire website or specific web pages.
+The extension allows you to configure and add personalised ads from an open and free available JSON file, which is maintained in one repo to your entire website or specific web pages.
 This section of the documentation explains the different parts of the extension and how they can be used and customised.
 
 .. toctree::
@@ -23,6 +23,7 @@ This section of the documentation explains the different parts of the extension 
    Quickstart <quickstart>
    Configuration <configuration>
    Ads JSON File <json-file>
+   Templating <templating>
    Tutorials <tutorial/index>
    Changelog <changelog>
    Support <support>

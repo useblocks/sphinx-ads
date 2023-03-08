@@ -9,7 +9,7 @@ Follow :ref:`Installation <install>` to set up a project and install Sphinx-Ads 
 A Minimal Sphinx Docs
 ---------------------
 
-To setup a Sphinx project, you need to do the following:
+To set up a Sphinx project, you need to do the following:
 
 1. Install the Sphinx extension using the command:
     .. code-block:: bash
@@ -42,7 +42,7 @@ To setup a Sphinx project, you need to do the following:
 
     .. note::
 
-        You cannot set the values for either :ref:`ads_path` or :ref:`ads_url` and not both in your **conf.py** file.
+        You can set the values for either :ref:`ads_path` or :ref:`ads_url` and not both in your **conf.py** file.
 6. Create a **layout.html** file in the **_templates/** folder under your **docs/** folder. The HTML file should contain the following data:
     .. code-block:: jinja
 
@@ -66,7 +66,7 @@ So what did the above steps do?
 1. First, we installed the ``sphinx`` extension and created a Sphinx project.
 2. We then created the JSON file, **ads.json**, that will contain the advertisement data based on the recommended :ref:`JSON data format <json-file>`.
 3. Next, we configured our Sphinx project to use the ``sphinx_ads`` based on the recommended :ref:`configuration <config>`.
-4. We then created the Jinja template file, **layout.html**, which calls the ``advertisement()`` function
-   in a Jinja block. The function returns the advertisement HTML content we want to display in the user's web browser.
+4. We then created the Jinja template file, **layout.html**, which calls the ``advertisement()`` function in a Jinja block.
+   We do not pass the layout name for the specific layout we want to use so the default layout provided by Sphinx Ads will be used. The function returns the advertisement HTML content we want to display in the user's web browser.
    Refer to the :ref:`advertisement() <advertisement_func>` section on the configuration page for more information.
 5. Finally, we build the Sphinx project and check the output in our web browser.
