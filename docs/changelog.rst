@@ -11,7 +11,7 @@ License
 0.0.1
 -----
 
-Released: under development
+Released: **08.03.2023**
 
 * **08.03.2023** - Added the following changes for the official first release:
     * Created the tag `0.0.1` for release.
