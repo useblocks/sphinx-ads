@@ -37,3 +37,4 @@ pygments_style = "perldoc"
 
 ads_path = "./ads.json"
 # ads_url = "https://raw.githubusercontent.com/useblocks/sphinx-ads/main/docs/ads.json"
+html_show_sourcelink = False
