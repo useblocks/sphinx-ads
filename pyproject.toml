@@ -2,7 +2,7 @@
 name = "sphinx-ads"
 
 # !! Don't miss updates in ads.py, conf.py, and changelog.rst!!!
-version = "0.0.1"
+version = "0.0.2"
 
 description = "Sphinx extension for advertising between different Sphinx-Projects and other pages"
 authors = ["team useblocks <info@useblocks.com>"]

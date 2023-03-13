@@ -8,6 +8,15 @@ License
 
 .. include:: ../LICENSE
 
+
+0.0.2
+-----
+
+Released: **13.03.2023**
+
+* **13.03.2023** - Updated release version to ``0.0.2``.
+* **12.03.2023** - Updated documentation.
+
 0.0.1
 -----
 

@@ -16,7 +16,7 @@ from sphinx_ads.logging import get_logger
 from sphinx_ads.templates import Template
 from sphinx_ads.utils import load_data
 
-VERSION = "0.0.1"
+VERSION = "0.0.2"
 
 
 def setup(app: Sphinx) -> Dict[str, Any]:

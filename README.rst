@@ -1,10 +1,29 @@
 Sphinx-Ads
 ==========
 
-Sphinx-Ads is an extension for the `Python <https://python.org>`_ based documentation framework `Sphinx <https://www.sphinx-doc.org>`_,
-which you can use to add advertisements from a central source to your Sphinx documentation website.
+.. image:: https://img.shields.io/pypi/l/sphinx-ads.svg
+   :target: https://pypi.python.org/pypi/sphinx-ads
+   :alt: License
+.. image:: https://img.shields.io/pypi/pyversions/sphinx-ads.svg
+   :target: https://pypi.python.org/pypi/sphinx-ads
+   :alt: Supported versions
+.. image:: https://github.com/useblocks/sphinx-ads/actions/workflows/docs.yaml/badge.svg
+   :target: https://github.com/useblocks/sphinx-ads/actions/docs.yaml
+   :alt: GitHub Docs CI Action status
+.. image:: https://github.com/useblocks/sphinx-ads/actions/workflows/ci.yaml/badge.svg
+   :target: https://github.com/useblocks/sphinx-ads/actions
+   :alt: GitHub CI Action status
+.. image:: https://img.shields.io/pypi/v/sphinx-ads.svg
+   :target: https://pypi.python.org/pypi/sphinx-ads
+   :alt: PyPI Package latest release
+.. image:: https://img.shields.io/badge/code%20style-black-000000.svg
+   :target: https://github.com/psf/black
+   :alt: black code style
 
-* Docs: http://sphinx-ads.useblocks.com/
+
+Sphinx-Ads is an extension for the `Python <https://python.org>`_ based documentation framework `Sphinx <https://www.sphinx-doc.org>`_, which you can use to add advertisements from a central source to your Sphinx documentation website.
+
+* Docs: http://sphinx-ads.useblocks.com
 * Repo: https://github.com/useblocks/sphinx-ads
 
 Installation
@@ -18,16 +37,16 @@ Using pip
 
 .. code-block:: bash
 
-   $ pip install sphinx-ads
+    $ pip install sphinx-ads
 
 From source
 +++++++++++
 
 .. code-block:: bash
 
-   $ git clone https://github.com/useblocks/sphinx-ads
-   $ cd sphinx-ads
-   $ pip install .
+    $ git clone https://github.com/useblocks/sphinx-ads
+    $ cd sphinx-ads
+    $ pip install .
 
 Activation
 ++++++++++
@@ -36,10 +55,10 @@ In the **conf.py** file under your **docs** folder, you can set the values for t
 
 .. code-block:: python
 
-   extensions = ["sphinx_ads",]
+    extensions = ["sphinx_ads",]
 
-   ads_path = "ads.json"   # path to the JSON file containing the ad data.
-   ads_url = "https://example.org/ads.json"    # url link to the JSON data
+    ads_path = "ads.json"   # path to the JSON file containing the ad data.
+    ads_url = "https://example.org/ads.json"    # url link to the JSON data
 
 .. note::
 
