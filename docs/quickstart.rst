@@ -19,11 +19,6 @@ To set up a Sphinx project, you need to do the following:
     .. code-block:: bash
 
         $ sphinx-quickstart
-
-    .. image:: _static/img/image_1.png
-        :align: center
-        :scale: 70%
-        :alt: sphinx-quickstart output
 3. Inside the docs folder, you should have the following file structure.
     .. image:: _static/img/image_2.png
         :align: center
@@ -38,7 +33,7 @@ To set up a Sphinx project, you need to do the following:
         extensions = ["sphinx_ads",]
 
         ads_path = "ads.json"   # path to the JSON file containing the ad data.
-        ads_url = "https://example.org/ads.json    # url link to the JSON data
+        ads_url = "https://example.org/ads.json"    # url link to the JSON data
 
     .. note::
 
