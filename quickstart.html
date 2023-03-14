@@ -1,0 +1,269 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Quickstart &#8212; Sphinx-Ads Docs</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx_ads/sphinx_ads.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/design-tabs.js"></script>
+    <script src="_static/sphinx_ads/sphinx_ads.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Configuration" href="configuration.html" />
+    <link rel="prev" title="Installation" href="installation.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="quickstart">
+<span id="id1"></span><h1>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this heading">¶</a></h1>
+<p>Eager to get started? This page gives a good introduction to Sphinx-Ads.
+Follow <a class="reference internal" href="installation.html#install"><span class="std std-ref">Installation</span></a> to set up a project and install Sphinx-Ads first.</p>
+<section id="a-minimal-sphinx-docs">
+<h2>A Minimal Sphinx Docs<a class="headerlink" href="#a-minimal-sphinx-docs" title="Permalink to this heading">¶</a></h2>
+<p>To set up a Sphinx project, you need to do the following:</p>
+<ol class="arabic">
+<li><dl>
+<dt>Install the Sphinx extension using the command:</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>sphinx
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Setup the Sphinx project by running the following command (choosing the default config options) under a <strong>docs/</strong> folder:</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sphinx-quickstart
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Inside the docs folder, you should have the following file structure.</dt><dd><a class="reference internal image-reference" href="_images/image_2.png"><img alt="sphinx file structure" class="align-center" src="_images/image_2.png" style="width: 308.7px; height: 251.1px;" /></a>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Create a JSON file named <strong>ads.json</strong> in your <strong>docs/</strong> folder. The JSON file will contain the advertisement data. For example, you can store the following data in your <strong>ads.json</strong> file.</dt><dd><div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="nt">&quot;advertisements&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;sphinx_needs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Sphinx Needs&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Sphinx-Needs is an extension for the Python based documentation framework Sphinx, which you can simply extend by different extensions to fulfill nearly any requirement of a software development team.&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;target_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://sphinx-needs.readthedocs.io&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;sphinx_needs_ent&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Sphinx Needs Enterprise&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Sphinx-Needs Enterprise package provides enterprise specific solutions for Sphinx-Needs.&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;target_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://useblocks.com/sphinx-needs-enterprise/&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;sphinx_test_reports&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Sphinx Test Reports&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Sphinx-Test-Reports shows test results inside Sphinx documentations.&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;target_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://sphinx-test-reports.readthedocs.io&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">},</span>
+<span class="nt">&quot;presentations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;select-product&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;template&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sphinx_ads_default.html&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;advertisements&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;sphinx_needs&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;sphinx_needs_ent&quot;</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;selector&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;.md-nav--primary&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;carousel&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;template&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sphinx_ads_default.html&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;selector&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;div.sphinxsidebar&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>In the <strong>conf.py</strong> file under your <strong>docs</strong> folder, you can set the values for the following options:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;sphinx_ads&quot;</span><span class="p">,]</span>
+
+<span class="n">ads_path</span> <span class="o">=</span> <span class="s2">&quot;ads.json&quot;</span>   <span class="c1"># path to the JSON file containing the ad data.</span>
+<span class="n">ads_url</span> <span class="o">=</span> <span class="s2">&quot;https://example.org/ads.json&quot;</span>    <span class="c1"># url link to the JSON data</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can set the values for either <a class="reference internal" href="configuration.html#ads-path"><span class="std std-ref">ads_path</span></a> or <a class="reference internal" href="configuration.html#ads-url"><span class="std std-ref">ads_url</span></a> and not both in your <strong>conf.py</strong> file.</p>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Create a <strong>layout.html</strong> file in the <strong>_templates/</strong> folder under your <strong>docs/</strong> folder. The HTML file should contain the following data:</dt><dd><div class="highlight-jinja notranslate"><div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">extends</span> <span class="s2">&quot;!layout.html&quot;</span> <span class="cp">%}</span>
+<span class="cp">{%</span> <span class="k">block</span> <span class="nv">footer</span> <span class="cp">%}</span>
+<span class="cp">{{</span> <span class="nb">super</span><span class="o">()</span> <span class="cp">}}</span>
+<span class="cp">{{</span> <span class="nv">advertisement</span><span class="o">()</span> <span class="cp">}}</span>
+<span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Build the documentation project by running the following command in a terminal inside the <strong>docs</strong> folder:</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sphinx-build<span class="w"> </span>-b<span class="w"> </span>html<span class="w"> </span>./<span class="w"> </span>./_build
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>You can open the HTML build files under the <strong>_build</strong> folder in your browser. The image below shows the <strong>index.html</strong> file in a browser.</dt><dd><a class="reference internal image-reference" href="_images/image_3.png"><img alt="index.html file" class="align-center" src="_images/image_3.png" style="width: 100%;" /></a>
+</dd>
+</dl>
+</li>
+</ol>
+<p>So what did the above steps do?</p>
+<ol class="arabic simple">
+<li><p>First, we installed the <code class="docutils literal notranslate"><span class="pre">sphinx</span></code> extension and created a Sphinx project.</p></li>
+<li><p>We then created the JSON file, <strong>ads.json</strong>, that will contain the advertisement data based on the recommended <a class="reference internal" href="json-file.html#json-file"><span class="std std-ref">JSON data format</span></a>.</p></li>
+<li><p>Next, we configured our Sphinx project to use the <code class="docutils literal notranslate"><span class="pre">sphinx_ads</span></code> based on the recommended <a class="reference internal" href="configuration.html#config"><span class="std std-ref">configuration</span></a>.</p></li>
+<li><p>We then created the Jinja template file, <strong>layout.html</strong>, which calls the <code class="docutils literal notranslate"><span class="pre">advertisement()</span></code> function in a Jinja block.
+We do not pass the layout name for the specific layout we want to use so the default layout provided by Sphinx Ads will be used. The function returns the advertisement HTML content we want to display in the user’s web browser.
+Refer to the <a class="reference internal" href="configuration.html#advertisement-func"><span class="std std-ref">advertisement()</span></a> section on the configuration page for more information.</p></li>
+<li><p>Finally, we build the Sphinx project and check the output in our web browser.</p></li>
+</ol>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/sphinx-ads-logo.png" alt="Logo"/>
+            </a></p>
+<h1 class="logo"><a href="index.html">Sphinx-Ads</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Quickstart</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#a-minimal-sphinx-docs">A Minimal Sphinx Docs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="json-file.html">Ads JSON File</a></li>
+<li class="toctree-l1"><a class="reference internal" href="templating.html">Templating</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="installation.html" title="previous chapter">Installation</a></li>
+      <li>Next: <a href="configuration.html" title="next chapter">Configuration</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer">
+      &copy;2023, team useblocks.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+    </div>
+
+    
+
+    
+<div id='sphinx_ads' style='display:none;margin-top:5px;padding:0 2px' data-sphinx-ads-docs-html_theme='alabaster' data-sphinx-ads-selector='.md-nav--primary'>
+
+
+    
+        
+            <div id="ads_link_1" class="sphinx-ads-item sa_is_hidden">
+                <a href="https://sphinx-needs.readthedocs.io" title="Sphinx Needs">
+<!--                    <div class="sphinx-ads-img"><img src="_static/img/download.svg" width="150" height="150"></div>-->
+                    <b style="margin-bottom: 3px;">Sphinx Needs</b>
+                    <p>Sphinx-Needs is an extension for the Python based...</p>
+                </a>
+            </div>
+        
+    
+        
+            <div id="ads_link_2" class="sphinx-ads-item sa_is_hidden">
+                <a href="https://useblocks.com/sphinx-needs-enterprise/" title="Sphinx Needs Enterprise">
+<!--                    <div class="sphinx-ads-img"><img src="_static/img/download.svg" width="150" height="150"></div>-->
+                    <b style="margin-bottom: 3px;">Sphinx Needs Enterprise</b>
+                    <p>Sphinx-Needs Enterprise package provides enterprise...</p>
+                </a>
+            </div>
+        
+    
+        
+    
+
+<div style="text-align:right;margin-bottom:10px;font-size:10pt;color:#787878;"><i> With 💛 by&nbsp;<a href="http://sphinx-ads.useblocks.com/">Sphinx-Ads</a></i></div></div>
+
+  </body>
+</html>
