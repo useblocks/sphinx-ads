@@ -1,6 +1,9 @@
 Sphinx-Ads
 ==========
 
+.. image:: https://img.shields.io/pypi/dm/sphinx-ads.svg
+    :target: https://pypi.python.org/pypi/sphinx-ads
+    :alt: Downloads
 .. image:: https://img.shields.io/pypi/l/sphinx-ads.svg
    :target: https://pypi.python.org/pypi/sphinx-ads
    :alt: License
